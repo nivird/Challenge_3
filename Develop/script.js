@@ -7,16 +7,16 @@ const collectEmployees = function() {
   const employees = [];
 
   //Getting user's first name, last name and salary using while loop and using push function to add the employees data
-  let addEmp = true;
+  let addEmployee = true;
 
-  while (addEmp) {
+  while (addEmployee) {
     const firstName = prompt("Enter the employee's first name:");
     const lastName = prompt("Enter the employee's last name:");
     const salary = parseFloat(prompt("Enter the employee's salary:"));
 
     employees.push({ firstName, lastName, salary });
-v
-    addEmp = confirm("Do you want to add another employee?");
+
+    addEmployee = confirm("Do you want to add another employee?");
   }
 
   return employees;
