@@ -5,16 +5,18 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   const employees = [];
-  let addEmployee = true;
 
-  while (addEmployee) {
-    const firstName = prompt("Enter employee's first name:");
-    const lastName = prompt("Enter employee's last name:");
-    const salary = parseFloat(prompt("Enter employee's salary:"));
+  //Getting user's first name, last name and salary using while loop and using push function to add the employees data
+  let addEmp = true;
+
+  while (addEmp) {
+    const firstName = prompt("Enter the employee's first name:");
+    const lastName = prompt("Enter the employee's last name:");
+    const salary = parseFloat(prompt("Enter the employee's salary:"));
 
     employees.push({ firstName, lastName, salary });
-
-    addEmployee = confirm("Do you want to add another employee?");
+v
+    addEmp = confirm("Do you want to add another employee?");
   }
 
   return employees;
@@ -24,9 +26,11 @@ const collectEmployees = function() {
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
+  // calculating the average of total no of employees 
   const totalSalary = employeesArray.reduce((sum, employee) => sum + employee.salary, 0);
   const averageSalary = totalSalary / employeesArray.length;
-  console.log(`Average Salary: $${averageSalary.toLocaleString('en-US', { maximumFractionDigits: 2 })}`);
+  console.log(`Average employee salary between ${employeesArray.length} is: $${averageSalary.toLocaleString('en-US', { maximumFractionDigits: 2 })}`);
+
 }
 
 // Select a random employee
